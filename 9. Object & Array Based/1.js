@@ -101,3 +101,40 @@
 //     if(num === "number") return;
 //     return num*2;
 // });
+
+
+
+// var obj = {a:1};
+// var secondobj = obj;
+// secondobj.a = 2;    /// there is call by refrence --> then original property will change.
+
+// console.log(obj)   // {a:2}
+// console.log(secondobj)  // {a:2}
+
+// var obj = {a:1};
+// var secondobj = obj;
+// secondobj = {a:2};   // there is call by value --> then its making new memory space for it.
+
+// console.log(obj);   // {a;1}
+// console.log(secondobj);   // {a:2}
+
+
+// #confussing
+// const arr = [1,2,3,4,5][1,3]
+// console.log(arr)  // 4 , the last element of an array will return the output using indexing.
+
+// const new1 = [3,2,3,3,45,77][1,6,3,5,5]
+// console.log(new1) // 77
+
+
+
+// console.log([] + [])  // ""
+// console.log([1] + []) // "1"
+// console.log([1] + "abc") // 1abc
+// console.log([1,2,3] + [1,2,3]) // 1,2,31,2,3
+
+
+
+const ans1 = NaN == NaN;  // false beacause NaN is always return a unique value.
+const ans2 = Object.is(NaN,NaN) // if its inside same object then return true.
+console.log(ans1,ans2)
