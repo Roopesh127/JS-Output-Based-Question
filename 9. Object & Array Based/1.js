@@ -135,6 +135,6 @@
 
 
 
-const ans1 = NaN == NaN;  // false beacause NaN is always return a unique value.
-const ans2 = Object.is(NaN,NaN) // if its inside same object then return true.
-console.log(ans1,ans2)
+// const ans1 = NaN == NaN;  // false beacause NaN is always return a unique value.
+// const ans2 = Object.is(NaN,NaN) // if its inside same object then return true.
+// console.log(ans1,ans2)
