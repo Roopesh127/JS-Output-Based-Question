@@ -177,5 +177,54 @@
 
 
 
-let x = Number("345e-1")
-console.log(x)
+// let x = Number("345e-1")
+// console.log(x)    // 345*(1/10)  ==> 34.5
+
+
+
+// console.log(2>1)
+// console.log(1==2)
+// console.log(2 != 1)
+
+
+// console.log("z">"w")
+// console.log("glow">"thre")
+// console.log("bee" < "bew")
+
+
+// console.log("S"<"s")
+
+
+// let x = 0;
+// console.log(Boolean(x))
+
+
+// let x = "0"
+// console.log(Boolean(x))
+
+
+
+// console.log(0 == false)
+// console.log(""==false)
+// console.log(" " == false)
+
+
+
+// console.log(null>0)   // false
+// console.log(null == 0)  // false
+// console.log(null>=0)   // true  ### special
+
+
+
+// console.log(undefined >0)
+// console.log(undefined<0)
+// console.log(undefined == 0)
+
+
+
+// console.log(5>4)
+// console.log("apple">"pineapple")
+// console.log("32">"41")  // dictionary comparision
+// console.log("2">"12") // true
+// console.log(undefined == null) // special case
+// console.log(null === undefined) // normal
