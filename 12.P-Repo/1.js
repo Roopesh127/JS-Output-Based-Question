@@ -306,3 +306,190 @@
 // console.log( a === b) // false , because new keyword make object
 
 
+// const obj = {a:"one" , b:"two" , a : "three"}
+// console.log(obj) // {a:"three" , b: "two"}
+
+
+// for(let i=1;i<5;i++){
+//     if(i == 3) continue;
+//     console.log(i) //  2 4  // because continue keyword skip value
+// }
+
+
+
+// const foo = ()=>console.log("first");
+// const boo = ()=>setTimeout(()=>console.log("second"))
+// const too = ()=>console.log("third");
+// boo();
+// too();
+// foo();
+
+//third
+//first
+//second
+
+
+// function sayHi(){
+//     return (()=>true)();
+// }
+// console.log(typeof sayHi()); //boolean
+
+
+// function sayHi(){
+//     return (()=>0)();
+// }
+// console.log(typeof sayHi()) // number
+
+
+// function sayHi(){
+//     return (()=>"roopesh")()
+// }
+// console.log(typeof sayHi()) // string
+
+
+// function sayHi(){
+//     return (()=>"sheetal")
+// }
+// console.log(typeof sayHi())  //function
+
+
+
+// const person = {name : "priya"};
+// function sayHi(age){
+//     return `${this.name} is ${age}`
+// }
+// console.log(sayHi.call(person,22))  // priya is 22
+// console.log(sayHi.bind(person,22))  // f()   //  bind will always return a function so require to invoke function
+// console.log(sayHi.bind(person,22)()) // priya is 22
+
+
+// console.log(typeof typeof 1)  // number => string
+
+
+// const number = [1,2,3]
+// number[6] = 11
+// console.log(number) // [1,2,3,,,,6]
+
+
+// const numbers = [1,2,3]
+// numbers[9] = numbers;
+// console.log(numbers)  // [1,2,3,,,,,]  // It will print infinite loop.
+
+
+// console.log(!!null)  // false
+// console.log(!!"")  // false
+// console.log(!!1)  // true
+
+
+// console.log(setInterval(()=>console.log("hi"),1000));
+// console.log(setInterval(()=>console.log("hii2")))
+
+
+// console.log(setTimeout(()=>console.log("chale chalo"),1000))
+
+
+// console.log([..."roopesh"]); // ['r','o','p','e','s','h']
+
+
+// function Car(){
+//   this.make  = "tata";
+//   return {make : "kia"}
+// }
+// const myCar = new Car();
+// console.log(myCar.make)
+
+
+// (()=>{
+//   let x = (y = 10);
+// })()
+// console.log(typeof x , y)  // undefined , 10
+
+
+// (()=>{
+//   let x = y = 10;
+// })()
+// console.log(y)
+
+
+// (()=>{
+//   let x = y = 10;
+// })
+// (()=>{
+//   let x = y = 20;
+// })
+// console.log(y)  // 10;
+
+
+// (()=>{
+//   let x = y = 10;
+// })();
+// (()=>{
+//   let x = y = 20;
+// })();
+// console.log(y)  // 20 
+
+
+// let x = 100;
+// (()=>{
+//   var x = 10;
+// })();
+// console.log(x) //100
+
+
+// const func = (function(a){
+//   delete a;
+//   return a;
+// })(5)
+// console.log(func)  // 5 , because delete property is used inside only object.
+
+
+// let property = "firstName";
+// const name1 = "priya";
+// const user = {
+//   property : name1,
+// }
+// console.log(user)  // {property : "priya"}
+
+// const user1 = {
+//   [property] : name1,
+// }
+// console.log(user1)
+
+
+
+// const user = {
+//   name1 : "priya",
+//   age :22,
+// }
+// // for itterate key
+// for(let item in user){
+//   console.log(item)  // name1 , age
+// }
+// // for itterate values
+// for(let item in user){
+//   console.log(user[item])  // priya , 22
+// }
+
+
+
+// const user = {
+//   name : "priya",
+//   age : 100
+// }
+// for(let item in user){
+//   if(typeof user[item] === "number"){
+//     user[item]*= 2 //  *2  --> return double value 
+//   }
+// }
+// console.log(user)  // "priya" , 200
+
+
+
+const a ={}
+const b = {key : "B"}
+const c = {key : "C"}
+
+a[b] = 123;
+// a[c] = 456;
+
+console.log(a)
