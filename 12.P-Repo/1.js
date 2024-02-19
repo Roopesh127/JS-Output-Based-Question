@@ -485,11 +485,327 @@
 
 
 
-const a ={}
-const b = {key : "B"}
-const c = {key : "C"}
+// const a ={}
+// const b = {key : "B"}
+// const c = {key : "C"}
 
-a[b] = 123;
-// a[c] = 456;
+// a[b] = 123;
+// // a.key3 = "abc";
+// // a["key4"] = "def";
+// // a[c] = 456;
+// a["[object Object]"] = 123
 
-console.log(a)
+// console.log(a)
+
+
+
+
+// const user = {
+//   name : "priya",
+//   age : 22,
+// }
+// // It's convert key in string form.
+// const obj1 = (JSON.stringify(user))
+// console.log(obj1) // {"name":"priya","age":"22"}
+
+// // It's convert string key in normal format (object).
+// const obj2 = (JSON.parse(obj1))
+// console.log(obj2) //{name : "priya" , age : 22}
+
+
+
+// const user = {
+//     naame : "Amardeep",
+//     age : 22,
+// }
+// console.log(JSON.stringify(user,["naame"]))  // {"name":"Amardeep"} // whe we pass as a array then it will return only these and ignore rest data.
+// console.log(JSON.stringify(user,["age"]))  // {"age":22}
+// console.log(user)  // {naame : "Amardeep" , age : 22}
+
+
+
+// const shape = {
+//     radius : 10,
+//     diameter(){
+//         return this.radius*2;
+//     }
+//     parimeter : ()=> 2*Math.PI*this.radius,
+// }
+// console.log(shape.diameter()) // 20
+// console.log(shape.parimeter()) // NaN  // beacause inside object arrow function will always pointing to window.
+
+
+
+// let user = {
+//     name : "roopesh",
+//     age : 22,
+// }
+// const name = "Vishal";
+//  const {name : myName} = user;
+//  console.log(myName)  // roopesh
+
+
+
+// for(var i = 1; i<= 3 ; i++ ){ 
+//     setTimeout ( ()=>{
+//          console. log(i)  // 4 4 4 
+//         },1000)
+//      }
+
+
+
+
+// let user = {
+//     age : 22,
+//     fullname : {
+//         first : {
+//             name : "sheetal",
+//             title : "Mrs.",
+//         },
+//         lastName : "Awadhiya",
+//     }
+// }
+// console.log(user.fullname.first.title) // Mrs.
+// const {fullname : {first : {title}}} = user;
+// console.log(title)  // Mrs.
+
+
+
+// let c = {
+//     greeting : "Hey!"
+// };
+// let d;
+
+// d = c;
+// c.greeting = "Hello";
+// console.log(d.greeting)  // "hello"
+
+
+
+// let person = { name : "shiya" }
+// const members = [person];
+// person = null;
+// console.log(members); // [{ name : "shiya"}]
+
+// let person1 = {name : "shiya"}
+// console.log(person1) // {name : "shiya"}
+
+// person1 = null;
+// console.log(person1)  // null
+
+// const members = [person1];
+// console.log(members)  // [null]
+
+// let person2 = { name : "shiya"}
+// const membersss = [person2];
+// console.log(membersss)  // [{ name : "shiya"}]
+// person2.name = null;
+// console.log(person2);  // { name : null}
+// console.log(membersss)  // [ { name : null } ]
+
+
+
+
+// console.log(1);
+
+// function print(name){
+//     setTimeout(()=>{
+//         return `${name}`
+//     },1000)
+// }
+// let value = print("Shiya");
+// console.log(value); // undefined , beacause its not wait for setTimeout and executed.
+
+// console.log(2)
+
+
+
+
+// ## NI AAYA SAMJH
+
+// console.log(1);
+
+// function print(name,cb){
+//     setTimeout(()=>{
+//         cb(`name`)
+//     },1000)
+// }
+// print("priya",(value)=>{
+//     console.log(value)
+// });
+
+// console.log(2);
+
+
+// console.log("12"+2) // "122"
+// console.log(Number("122"))  // 122 
+
+
+
+// console.log(Number("122"))
+
+// let a = "hello";
+// console.log(-a)
+
+
+// function abc(){
+//     return 2;
+// }
+// abc();
+
+// console.log(typeof(abc))
+
+// let obj ={
+//     a : 22,
+//     pop : ()=>5
+// }
+// console.log(obj.pop())
+
+// typeof -> Object
+// console.log(typeof(obj))
+
+
+// let arr = [1,2,3,4]
+// console.log(typeof(arr))
+
+
+// (let a= 2>3>4=3)
+
+
+
+// function sayHi() {
+//     console.log(name);
+//     console.log(age);
+//     var name = 'Lydia';
+//     let age = 21;
+//   }
+  
+//   sayHi();  // Lydia , 21
+
+
+
+// function hoistExample() {
+//     var a;
+//     console.log("Before: ", a);  
+//     a = 10;  
+//     console.log("After: ", a);  
+//     }
+//     hoistExample();
+
+
+
+
+
+// console.log(foo)
+// var foo = "bar";
+
+// function foo() {
+//   return "bar";
+// }
+
+
+
+// (function abc(){
+//     console.log("hello")
+// })()
+
+
+const x =5;
+ x = 10;
+console.log(x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 810
