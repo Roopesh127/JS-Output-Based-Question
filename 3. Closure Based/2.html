@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// function outer(){
+//   var a =10;
+//   function inner(){
+//     console.log(a);
+//   }
+//   return inner;
+// }
+
+// let x = outer();
+// // console.log(x)   // ƒ inner(){
+//                         console.log(a);
+//                          }
+
+
+
+// function outer(){
+//     var a = 10;
+//     function inner(){
+//         console.log(a)
+//     }
+//     return inner;
+// }
+// outer()();
+
+
+
+// function outer(){
+//   var a =10;
+//   function inner(){
+//     console.log(a);
+//   }
+//   return inner;
+// }
+
+// var close = outer(); 
+// close(); 
+
+
+
+
+// function outer(){ 
+//   function inner(){
+//     console.log(a);
+//   }
+//   var a =10;
+//   return inner;
+// }
+
+// var close = outer(); 
+// close();
+
+
+
+// function outer(){ 
+//   function inner(){
+//     console.log(a);
+//   }
+//   let a =10; // let instead of var
+//   return inner;
+// }
+
+// var close = outer(); // this will give you outer function
+// close();
+
+
+
+
+// function outer(b){ 
+//   function inner(){
+//     console.log(a, b); // try printing b here
+//   }
+//   let a =10; // let instead of var
+//   return inner;
+// }
+
+// // Passing argument here 
+// var close = outer("Hi Closures"); // this will give you outer function
+// close(); 
+
+
+
+
+// function outest(){
+//   var c = 12; 
+//   function outer(b){ 
+//     function inner(){
+//       console.log(a, b, c); // try printing b and c  here
+//     }
+//     let a =10; // let instead of var
+//     return inner;
+//   }
+//   return outer;
+// }
+
+
+// // Passing argument here 
+// var close = outest()("Hi Closures"); // this will give you outer function
+// // close(); // this will give you inner function and equivalent
+// console.log(close);
+
+
+
+// Garbage collector example
+
+// function a(){
+//   var x = 10, z = 20;
+//   return function b(){
+//    console.log(x);
+//   }
+// }
+// var y = a();
+
+
+
+
+
+
+    </script>
+</body>
+</html>

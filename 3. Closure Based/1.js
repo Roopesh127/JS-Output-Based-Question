@@ -263,16 +263,16 @@
 // funcs[1](); // Output?
 // funcs[2](); // Output?
 
-outer(); 
+// outer(); 
 
-function outer() {
-    var x = 1;
+// function outer() {
+//     var x = 1;
   
-    inner();
-    function inner() {
-      console.log(x);
-    //   var x = 2;
-    }
+//     inner();
+//     function inner() {
+//       console.log(x);
+//     //   var x = 2;
+//     }
   
    
   }
