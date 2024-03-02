@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //   function outerfunction(){
+    //     var variable = "Hi";
+    //     function innerfunction(name){
+    //         console.log(variable +" " +name);
+    //     }
+    //     return innerfunction;
+    //   }
+    //   var inner = outerfunction();
+    //   inner("closure");
+
+
+
+    
+//     function outer() {
+//   var x = 10;
+//   function inner() {
+//     console.log(x);  // What is logged?
+//   }
+//   return inner;
+// }
+// var innerFunc = outer();
+// innerFunc();
+
+
+// function outer() {
+//   var x = 10;
+//   function inner() {
+//     console.log(x);  // What is logged?
+//   }
+//   var x = 20;
+//   return inner;
+// }
+// var innerFunc = outer();
+// innerFunc();
+
+
+
+// function outer() {
+//   var x = 10;
+//   function inner() {
+//     var y = 12;
+//     console.log(x+y); // What is logged?
+//   }
+//   return inner;
+// }
+// var innerFunc = outer();
+// innerFunc();
+
+
+
+
+// var a = 1; 
+// function b() { 
+//     a = 10; 
+//     return; 
+//     function a() {} 
+// } 
+// b(); 
+// console.log(a);
+
+
+
+
+// function test() {
+//    console.log(a); // What is logged?
+//    console.log(foo()); // What is logged?
+   
+//    var a = 1;
+//    function foo() {
+//       return 2;
+//    }
+// }
+
+// test();
+
+
+
+
+// var fullname = 'Daisy Doe';
+// var obj = {
+//    fullname: 'Vera Singh',
+//    prop: {
+//       fullname: 'Amar Akbar Anthony',
+//       getFullname: function() {
+//          return this.fullname;
+//       }
+//    }
+// };
+
+// console.log(obj.prop.getFullname());
+
+// var test = obj.prop.getFullname;
+
+// console.log(test()); // What is logged?
+
+
+
+
+
+// var username = "Piyush";
+// function makeFunc(){
+//     var name = "mozilla";
+//     function displayName(num){
+//         console.log(name,num,username)
+//     }
+//     return displayName;
+// }
+// makeFunc()(5); 
+
+
+
+
+//  var e = 10;
+//  function sum(a){
+//     return function (b){
+//         return function (c){
+//             return function (d){
+//                 return a+b+c+d+e;
+//             }
+//         }
+//     }
+//  }
+// console.log(sum(1)(2)(3)(4))
+
+
+
+// let count = 0;
+// (
+//     function printcount(){
+//         if(count === 0){
+//             let count = 1;
+//             console.log(count);
+//         }
+//         console.log(count);
+//     }
+// )();
+
+
+
+
+// function createBase(num){
+//     return function (innerNum){
+//         console.log(innerNum + num);
+//     };
+// }
+// var addSix = createBase(6)
+// addSix(10)  // 6 + 10
+// addSix(21)  // 21 + 6
+
+
+
+function a(){
+    for(var i=0;i<3;i++){
+        setTimeout(function log(){
+            console.log(i)
+        },i*1000);
+    }
+}
+a();
+
+
+    </script>
+</body>
+</html>
