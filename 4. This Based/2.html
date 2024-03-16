@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //  const object = {
+    //     messsage : "Hello world",
+
+    //     getmessage(){
+    //         const messsage =  "Hello Earth";
+    //         return this.messsage;
+    //     }
+    //  };
+    //  console.log(object.getmessage());
+
+
+
+
+//   const object = {
+//     message : "hello world",
+
+//     logMessage(){
+//         console.log(this.message);
+//     }
+//   };
+//   setTimeout(object.logMessage(),1000)
+
+
+
+
+// const object = {
+//     who : "world",
+
+//     greet(){
+//         return `Hello , ${this.who}!`;
+//     },
+//     farewell : ()=>{
+//         return `Goodye , ${this.who}`;
+//     }
+// }
+// console.log(object.greet());  // Hello world
+// console.log(object.farewell());  // undefined 
+
+
+
+
+var length = 4;
+function callback(){
+    console.log(this.length);
+}
+const object = {
+    length : 5,
+    method(callback){
+        callback();
+    }
+};
+object.method(callback,)
+
+
+
+
+    </script>
+</body>
+</html>

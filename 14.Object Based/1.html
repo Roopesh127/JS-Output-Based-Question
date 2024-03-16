@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+ //1. creating object by literal syntax
+
+    //  let person = {
+    //      firstName : "Roopesh",
+    //      lastName : "Vishwakarma"
+    //  }
+    
+
+
+
+     // 2. creating object by new keyword
+
+    //  const person  = new Object();
+    //  person.firstName = "Shiya";
+    //  person.lastName = "Awadhiya";
+    //  console.log(person)
+
+
+
+
+    // 3. 
+    // let user = {name : "john"}
+    // console.log(user.name)  // john
+    // let admin = user;
+    // admin.name = "pete";
+    // console.log(user.name)  // pete
+
+
+
+
+    // Two object are only equal when they have same name or same refrence.
+
+    // let user = {name : "Roopesh"}
+    // let user1 = {name :"Shiya"}
+    // console.log(user === user1) // false
+    // console.log(user == user1);  // false
+
+
+    //  let a = {name : "hello"};
+    //  let b = a;
+    //  console.log(a == b) // true
+    //  console.log(a === b) // true
+
+
+    // let a = {}
+    // let b = {}
+    // console.log(a == b) //false
+    // console.log(a === b); // false
+
+
+    // A important point is that if we are declare object by const variable then we can easily change by the helping of refrence.
+
+    // const user = {name : "john"}
+    // user.name = "prete";
+    // console.log(user.name )
+
+
+
+
+
+    // Object cloning
+
+    // let user = {
+    //     name: "roopesh",
+    //     city : "jabalpur"
+    // }
+    
+    // let clone = {}
+    // for(let data in user){
+    //     clone[data] = user[data]
+    // }
+    // console.log(user);
+    // console.log(clone);
+
+
+
+    // #Comparing two object key and value
+
+    let obj1 = {name:"roopesh" , city:"jabalpur"}
+    let obj2 = {name:"roopesh" , city:"jabalpur", college : "srit"}
+    // console.log(obj1 == obj2) // false
+    console.log(JSON.stringify(obj1) == JSON.stringify(obj2)); // false
+    console.log(JSON.stringify(obj1) === JSON.stringify(obj2)) // false
+
+
+
+
+    // let user = {
+    //     name:"shiya",
+    //     age:22,
+    // }
+    // user.sayHello = function(){
+    //     console.log("hello" + " " + this.name )
+    // };
+    // user.sayHello();
+
+    </script>
+</body>
+</html>
