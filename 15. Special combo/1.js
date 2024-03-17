@@ -719,6 +719,8 @@ function abc (x){
     
     
     
+    console.log([] + []);
+    Answer: “”
     
     
     
