@@ -89,10 +89,8 @@
 // }
 // arr[2]
 
-let obj = {
-   "firstname" : "roopesh",
-   "lastname" : "verma"
-}
-for(let x in obj){
-    console.log(x)
-}
+
+
+
+const person = {name1 : "Piyush"}
+ngf vtt
