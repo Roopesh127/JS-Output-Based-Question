@@ -92,5 +92,26 @@
 
 
 
-const person = {name1 : "Piyush"}
-ngf vtt
+// const person = {name1 : "Piyush"}
+// function sayHi(age){
+//     return `${this.name1} is ${age}`
+// } 
+// console.log(sayHi.call(person,24));
+// console.log(sayHi.bind(person,23));
+
+
+
+
+
+const  age = 10;
+var person = {
+    name : "piyush",
+    age : 20,
+    getAge : function(){
+        return this.age;
+    }
+}
+var person2 = {age : 24};
+// console.log(person.getAge.call(person2));
+// console.log(person.getAge.apply(person2))
+console.log(person.getAge.bind(person2))
