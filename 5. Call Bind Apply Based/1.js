@@ -103,15 +103,133 @@
 
 
 
-const  age = 10;
-var person = {
-    name : "piyush",
+// const  age = 10;
+// var person = {
+//     name : "piyush",
+//     age : 20,
+//     getAge : function(){
+//         return this.age;
+//     }
+// }
+// var person2 = {age : 24};
+// // console.log(person.getAge.call(person2));
+// // console.log(person.getAge.apply(person2))
+// console.log(person.getAge.bind(person2))
+
+
+
+
+// var status = '😎';
+
+// setTimeout(() => {
+//   const status = '😍';
+
+//   const data = {
+//     status: '🥑',
+//     getStatus() {
+//       return this.status;
+//     },
+//   };
+
+//   console.log(data.getStatus());  // 🥑
+//   console.log(data.getStatus.call(this)); // 😎
+// }, 0);
+
+
+
+
+// const animals = [
+//     { species: 'Lion', name: 'King' },
+//     { species: 'Whale', name: 'Queen' }
+//   ];
+  
+//   function printAnimals(i) {
+//       this.print = function() {
+//         console.log('#' + i + ' ' + this.species
+//                     + ': ' + this.name);
+//       }
+//       this.print();
+//     }
+// //   printAnimals.call(animals) 
+// for(let i = 0; i<animals.length;i++){
+//     printAnimals.call(animals[i],i)
+// }
+
+
+
+
+// const array = ['a', 'b'];
+// const elements = [0, 1, 2];
+// array.push.apply(array,elements);
+// console.log(array);
+
+
+
+// const numbers = [5, 6, 2, 3, 7];
+// console.log(Math.max.apply(null,numbers));
+// console.log(Math.min.apply(null,numbers));
+
+
+
+
+// function f() {
+//     console.log( this ); // ?
+//   }
+  
+//   let user = {
+//     g: f.bind(null)
+//   };
+  
+//   user.g();
+  
+
+
+
+// function f(){
+//     console.log(this.name1);  // john , because we can't change bind context again 
+// }
+// f = f.bind({name1:"john"}).bind({name1:"anna"});
+// f();
+
+
+
+
+// function checkpassword(success,failed){
+//     let password = prompt("passwword?","");
+//     if(password == "Roadsidecoder") success();
+//     else failed();
+// }
+
+// let user = {
+//     name1 : "Piyush",
+
+//     loginsuccessful(){
+//         console.log(`${this.name1} logged in`);
+//     },
+
+//     loginFailed(){
+//         console.log(`${this.name1} failed to login`);
+//     },
+// };
+
+// checkpassword(user.loginsuccessful , user.loginFailed);
+
+
+
+
+
+// ##   Call , bind & apply all are not working in arrow function because inside arrow function there is no concept of This keyword. 
+
+   const age = 10;
+
+   var person = {
+    name1: "roopesh",
     age : 20,
-    getAge : function(){
-        return this.age;
-    }
-}
-var person2 = {age : 24};
-// console.log(person.getAge.call(person2));
-// console.log(person.getAge.apply(person2))
-console.log(person.getAge.bind(person2))
+    getArrow:()=> console.log(this),
+    getAge : function (){
+        console.log(this.age);
+    },
+   };
+   var person2 = {age:24};
+   person.getArrow.call(person2); // global
+   person.getAge.call(person2); // 24
