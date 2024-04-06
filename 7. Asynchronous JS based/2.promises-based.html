@@ -7,511 +7,503 @@
   </head>
   <body>
     <script>
-      // const promise1 = Promise.resolve('First')
-      // const promise2 = Promise.resolve('Second')
-      // const promise3 = Promise.reject('Third')
-      // const promise4 = Promise.resolve('Fourth')
+            // const promise1 = Promise.resolve('First')
+            // const promise2 = Promise.resolve('Second')
+            // const promise3 = Promise.reject('Third')
+            // const promise4 = Promise.resolve('Fourth')
 
-      // const runPromises = async () => {
-      // 	const res1 = await Promise.all([promise1, promise2])
-      // 	const res2  = await Promise.all([promise3, promise4])
-      // 	return [res1, res2]
+            // const runPromises = async () => {
+            // 	const res1 = await Promise.all([promise1, promise2])
+            // 	const res2  = await Promise.all([promise3, promise4])
+            // 	return [res1, res2]
+            // }
+
+            // runPromises()
+            // 	.then(res => console.log(res))
+            // 	.catch(err => console.log(err))
+
+            // ---------------------------------------------------------------------------------------------------------------------------------
+
+            // const pr = new Promise((resolve,reject)=>{
+            //     let a = 10;
+            //     if(a == 10){
+            //         resolve("Promise is resolved")
+            //     }
+            //     else{
+            //         reject("promise is rejected")
+            //     }
+            // })
+            // .then((success)=>{
+            //     console.log("resolved data",success);
+            // }).catch((error)=>{
+            //     console.log("rejected data",error);
+            // })
+
+            // console.log(pr);
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // $$$$$$$$  DOUBT $$$$$$$$$$$$$$$$$$$$
+
+            // const myPromise = Promise.resolve(Promise.resolve('Promise'));
+
+            // function funcOne() {
+            //   setTimeout(() => console.log('Timeout 1!'), 0);
+            //   myPromise.then(res => res).then(res => console.log(`${res} 1!`));
+            //   console.log('Last line 1!');
+            // }
+
+            // async function funcTwo() {
+            //   const res = await myPromise;
+            //   console.log(`${res} 2!`)
+            //   setTimeout(() => console.log('Timeout 2!'), 0);
+            //   console.log('Last line 2!');
+            // }
+
+            // funcOne();
+            // funcTwo();
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            // const firstPromise = new Promise((res, rej) => {
+            //   setTimeout(res, 500, 'one');
+            // });
+
+            // const secondPromise = new Promise((res, rej) => {
+            //   setTimeout(res, 100, 'two');
+            // });
+
+            // Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+
+            // ----------------------------------------------------------------------------------------------------------
+
+            // fetch('https://www.website.com/api/user/1')
+            //   .then(res => res.json())
+            //   .then(res => console.log(res));
+
+            // -----------------------------------------------------------------------------------------------------------------------------------
+
+            // $$$$$$$$  DOUBT $$$$$$$$$$$$$$$$$$$$
+
+            // const myPromise = () => Promise.resolve('I have resolved!');
+
+            // function firstFunction() {
+            //   myPromise().then(res => console.log(res));
+            //   console.log('second');
+            // }
+
+            // async function secondFunction() {
+            //   console.log(await myPromise());
+            //   console.log('second');
+            // }
+
+            // firstFunction();
+            // secondFunction();
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+          //   function job() {
+          //     return new Promise(function (resolve, reject) {
+          //       reject();
+          //     });
+          //   }
+
+          //   let promise = job();
+
+          //   promise
+          //     .then(function () {
+          //       console.log("Success 1");
+          //     })
+
+          //     .then(function () {
+          //       console.log("Success 2");
+          //     })
+
+          //     .then(function () {
+          //       console.log("Success 3");
+          //     })
+
+          //     .catch(function () {
+          //       console.log("Error 1");
+          //     })
+
+          //     .then(function () {
+          //       console.log("Success 4");
+          //     });
+
+      // --------------------------------------------------------------------------------------------------------
+
+
+
+
+      // function job() {
+      //         return new Promise(function (resolve, reject) {
+      //           reject();
+      //         });
+      //       }
+
+      //       let promise = job();
+
+      //       promise
+
+      //         .catch(function () {
+      //           console.log("Error 1");
+      //         })
+
+      //         .then(function () {
+      //           console.log("Success 1");
+      //         })
+
+      //         .then(function () {
+      //           console.log("Success 2");
+      //         })
+
+      //         .then(function () {
+      //           console.log("Success 3");
+      //         })
+
+      //         .then(function () {
+      //           console.log("Success 4");
+      //         });
+
+
+      //     output :-
+
+              //  Error 1
+              //  Success 1
+              //  Success 2
+              //  Success 3
+              //  Success 4
+
+
+
+
+      // -----------------------------------------------------------------------------------------------------
+
+
+
+      // function job(state) {
+      //     return new Promise(function(resolve, reject) {
+      //         if (state) {
+      //             resolve('success');
+      //         } else {
+      //             reject('error');
+      //         }
+      //     });
       // }
 
-      // runPromises()
-      // 	.then(res => console.log(res))
-      // 	.catch(err => console.log(err))
+      // let promise = job(true);
 
-      // ---------------------------------------------------------------------------------------------------------------------------------
+      // promise
 
-      // const pr = new Promise((resolve,reject)=>{
-      //     let a = 10;
-      //     if(a == 10){
-      //         resolve("Promise is resolved")
-      //     }
-      //     else{
-      //         reject("promise is rejected")
-      //     }
+      // .then(function(data) {
+      //     console.log(data);   // success
+
+      //     return job(false);
       // })
-      // .then((success)=>{
-      //     console.log("resolved data",success);
-      // }).catch((error)=>{
-      //     console.log("rejected data",error);
+
+      // .catch(function(error) {
+      //     console.log(error);   // error
+
+      //     return 'Error caught';
       // })
 
-      // console.log(pr);
+      // .then(function(data) {
+      //     console.log(data);   // Error caught
 
-      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      //     return job(true);
+      // })
 
-      // $$$$$$$$  DOUBT $$$$$$$$$$$$$$$$$$$$
-
-      // const myPromise = Promise.resolve(Promise.resolve('Promise'));
-
-      // function funcOne() {
-      //   setTimeout(() => console.log('Timeout 1!'), 0);
-      //   myPromise.then(res => res).then(res => console.log(`${res} 1!`));
-      //   console.log('Last line 1!');
-      // }
-
-      // async function funcTwo() {
-      //   const res = await myPromise;
-      //   console.log(`${res} 2!`)
-      //   setTimeout(() => console.log('Timeout 2!'), 0);
-      //   console.log('Last line 2!');
-      // }
-
-      // funcOne();
-      // funcTwo();
-
-      /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-      // const firstPromise = new Promise((res, rej) => {
-      //   setTimeout(res, 500, 'one');
+      // .catch(function(error) {
+      //     console.log(error);
       // });
 
-      // const secondPromise = new Promise((res, rej) => {
-      //   setTimeout(res, 100, 'two');
+
+
+      // ------------------------------------------------------------------------------------------------------------
+
+
+      // function job(state) {
+      //     return new Promise(function(resolve, reject) {
+      //         if (state) {
+      //             resolve('success');
+      //         } else {
+      //             reject('error');
+      //         }
+      //     });
+      // }
+
+      // let promise = job(true);
+
+      // promise
+
+      // .then(function(data) {
+      //     console.log(data);
+
+      //     return job(true);
+      // })
+
+      // .then(function(data) {
+      //     if (data !== 'victory') {
+      //         throw 'Defeat';
+      //     }
+
+      //     return job(true);
+      // })
+
+      // .then(function(data) {
+      //     console.log(data);
+      // })
+
+      // .catch(function(error) {
+      //     console.log(error);
+
+      //     return job(false);
+      // })
+
+      // .then(function(data) {
+      //     console.log(data);
+
+      //     return job(true);
+      // })
+
+      // .catch(function(error) {
+      //     console.log(error);
+
+      //     return 'Error caught';
+      // })
+
+      // .then(function(data) {
+      //     console.log(data);
+
+      //     return new Error('test');
+      // })
+
+      // .then(function(data) {
+      //     console.log('Success:', data.message);
+      // })
+
+      // .catch(function(data) {
+      //     console.log('Error:', data.message);
       // });
 
-      // Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+
+
+
+
+      // ----------------------------------------------------------------------------------------------------
+
+
+      // console.log('start');
+      // const promise1 = new Promise((resolve, reject) => {
+      //    console.log(1)
+      // }) ;
+      // console.log('end');
+
+
+      // -----------------------------------------------------------------------------------------------------
+
+
+      // console.log('start');
+      // const promise1 = new Promise((resolve, reject) => {
+      //   console.log(1)
+      //   resolve(2)
+      // })
+      // promise1.then(res => {
+      //   console.log(res)
+      // })
+      // console.log('end');
+
+      // start , 1 , end , 2
+
+
+
+      // -----------------------------------------------------------------------------------------------------
+
+
+      // console.log('start');
+      // const promise1 = new Promise((resolve, reject) => {
+      //   console.log(1)
+      //   resolve(2)
+      //   console.log(3)
+      // })
+      // promise1.then(res => {
+      //   console.log(res)
+      // })
+      // console.log('end');
+
+      // // start , 1 , 3 , end , 2
+
+
+      // --------------------------------------------------------------------------------------------------
+
+
+
+      // console.log('start');
+      // const promise1 = new Promise((resolve, reject) => {
+      //     resolve("hi boss")
+      //   console.log(1)
+      // })
+      // promise1.then(res => {
+      //   console.log(res)
+      //   console.log("hi");
+      // })
+      // console.log('end');
+
+      // start , 1 , end  , hi boss , hi
+
+
+
+      // ----------------------------------------------------------------------------------------------------
+
+
+      // console.log('start')
+      // const fn = () => (new Promise((resolve, reject) => {
+      //     console.log(1);
+      //     resolve('success')
+      // }))
+      // console.log('middle')
+      // fn().then(res => {
+      //    console.log(res)
+      // })
+
+      // console.log('end')
+
+
+      // start , middle , 1 , end , success
+
+
+
+      // -------------------------------------------------------------------------------------------------------
+
+
+      // console.log('start')
+      // setTimeout(() => {
+      //   console.log('setTimeout')
+      // })
+      // Promise.resolve().then(() => {
+      //   console.log('resolve')
+      // })
+      // console.log('end')
+
+
+      // start , end , resolve , setTimeout
+
 
       // ----------------------------------------------------------------------------------------------------------
 
-      // fetch('https://www.website.com/api/user/1')
-      //   .then(res => res.json())
-      //   .then(res => console.log(res));
 
-      // -----------------------------------------------------------------------------------------------------------------------------------
+      // const promise = new Promise((resolve, reject) => {
+      //   console.log(1);
+      //   setTimeout(() => {
+      //     console.log("timerStart");
+      //     resolve("success");
+      //     console.log("timerEnd");
+      //   }, 0);
+      //   console.log(2);
+      // });
+      // promise.then((res) => {
+      //    console.log(res);
+      // });
+      // console.log(4);
 
-      // $$$$$$$$  DOUBT $$$$$$$$$$$$$$$$$$$$
+       // 1 , 2 , 4 , timeStart , timeEnd , success
 
-      // const myPromise = () => Promise.resolve('I have resolved!');
 
-      // function firstFunction() {
-      //   myPromise().then(res => console.log(res));
-      //   console.log('second');
+
+      //  -----------------------------------------------------------------------------------------------------
+
+
+
+
+
+      // console.log("starting");
+
+      //  function promise(){
+      //     console.log(1);
+      //     return new Promise((resolve,reject)=>{
+      //         setTimeout(()=>{
+      //            console.log("timestart");
+      //            resolve("success")
+      //            console.log("timeEnd");
+      //         },0)
+      //         console.log(2);
+      //     })
       // }
+      // promise().then((run)=>{
+      //     console.log(run);
+      // });
+      // console.log(4);
 
-      // async function secondFunction() {
-      //   console.log(await myPromise());
-      //   console.log('second');
-      // }
 
-      // firstFunction();
-      // secondFunction();
+      // starting , 1 , 2 , 4, timestart ,  timeEnd , success
 
-      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+      // -------------------------------------------------------------------------------------------------------------------
 
 
+      // const timer1 = setTimeout(() => {
+      //   console.log('timer1');
+      //   promise1 = Promise.resolve().then(() => {
+      //     console.log('promise1')
+      //   })
+      // }, 0)
+      // const timer2 = setTimeout(() => {  console.log('timer2')}, 0)
 
-    //   function job() {
-    //     return new Promise(function (resolve, reject) {
-    //       reject();
-    //     });
-    //   }
+      // //  timer1 , promise1 , timer2
 
-    //   let promise = job();
 
-    //   promise
-    //     .then(function () {
-    //       console.log("Success 1");
-    //     })
 
-    //     .then(function () {
-    //       console.log("Success 2");
-    //     })
+      // console.log("start");
 
-    //     .then(function () {
-    //       console.log("Success 3");
-    //     })
+      // const promise1 = Promise.resolve().then(()=>{
+      //     console.log("promise 1");
+      //     const timer2 = setTimeout(()=>{
+      //         console.log("timer 2");
+      //     },0)
+      //     });
 
-    //     .catch(function () {
-    //       console.log("Error 1");
-    //     })
+      // const timer1 = setTimeout(()=>{
+      //     console.log("timer 1");
+      //     const promise2 = Promise.resolve().then(()=>{
+      //         console.log("promise 2");
+      //     })
+      // },0)
 
-    //     .then(function () {
-    //       console.log("Success 4");
-    //     });
+      // console.log("end");
 
-// --------------------------------------------------------------------------------------------------------
+      // start , end , promise 1 , timer1 , promise 2 , timer 2
 
 
 
 
-// function job() {
-//         return new Promise(function (resolve, reject) {
-//           reject();
-//         });
-//       }
+      // console.log("start");
 
-//       let promise = job();
+      // const promise1 = Promise.resolve().then(() => {
+      //     console.log("promise 1");
+      //     const timer2 = setTimeout(() => {
+      //         console.log("timer 2");
+      //     }, 0);
+      // });
 
-//       promise
-        
-//         .catch(function () {
-//           console.log("Error 1");
-//         })
+      // const timer1 = setTimeout(() => {
+      //     console.log("timer 1");
+      //     const promise2 = Promise.resolve().then(() => {
+      //         console.log("promise 2");
 
-//         .then(function () {
-//           console.log("Success 1");
-//         })
+      //         const timer3 = setTimeout(() => {
+      //             console.log("timer 3");
+      //         });
+      //     }, 0);
+      // }, 0);
 
-//         .then(function () {
-//           console.log("Success 2");
-//         })
+      // console.log("end");
 
-//         .then(function () {
-//           console.log("Success 3");
-//         })
 
-//         .then(function () {
-//           console.log("Success 4");
-//         });
-
-
-//     output :-
-
-        //  Error 1
-        //  Success 1
-        //  Success 2
-        //  Success 3
-        //  Success 4
-
-
-
-
-// -----------------------------------------------------------------------------------------------------
-
-
-
-// function job(state) {
-//     return new Promise(function(resolve, reject) {
-//         if (state) {
-//             resolve('success');
-//         } else {
-//             reject('error');
-//         }
-//     });
-// }
-
-// let promise = job(true);
-
-// promise
-
-// .then(function(data) {
-//     console.log(data);   // success
-
-//     return job(false);
-// })
-
-// .catch(function(error) {
-//     console.log(error);   // error
-
-//     return 'Error caught';
-// })
-
-// .then(function(data) {
-//     console.log(data);   // Error caught
-
-//     return job(true);
-// })
-
-// .catch(function(error) {
-//     console.log(error);
-// });
-
-
-
-// ------------------------------------------------------------------------------------------------------------
-
-
-// function job(state) {
-//     return new Promise(function(resolve, reject) {
-//         if (state) {
-//             resolve('success');
-//         } else {
-//             reject('error');
-//         }
-//     });
-// }
-
-// let promise = job(true);
-
-// promise
-
-// .then(function(data) {
-//     console.log(data); 
-
-//     return job(true);
-// })
-
-// .then(function(data) {
-//     if (data !== 'victory') {
-//         throw 'Defeat';  
-//     }
-
-//     return job(true);
-// })
-
-// .then(function(data) {
-//     console.log(data);  
-// })
-
-// .catch(function(error) {
-//     console.log(error); 
-
-//     return job(false);
-// })
-
-// .then(function(data) {
-//     console.log(data); 
-
-//     return job(true);
-// })
-
-// .catch(function(error) {
-//     console.log(error);
-
-//     return 'Error caught'; 
-// })
-
-// .then(function(data) {
-//     console.log(data);   
-
-//     return new Error('test');
-// })
-
-// .then(function(data) {
-//     console.log('Success:', data.message);
-// })
-
-// .catch(function(data) {
-//     console.log('Error:', data.message);   
-// });
-
-
-
-
-
-// ----------------------------------------------------------------------------------------------------
-
-
-// console.log('start'); 
-// const promise1 = new Promise((resolve, reject) => {  
-//    console.log(1)
-// }) ;
-// console.log('end');
-
-
-// -----------------------------------------------------------------------------------------------------
-
-
-// console.log('start'); 
-// const promise1 = new Promise((resolve, reject) => {  
-//   console.log(1)  
-//   resolve(2)
-// }) 
-// promise1.then(res => {  
-//   console.log(res)
-// }) 
-// console.log('end');
-
-// start , 1 , end , 2
-
-
-
-// -----------------------------------------------------------------------------------------------------
-
-
-// console.log('start'); 
-// const promise1 = new Promise((resolve, reject) => {  
-//   console.log(1)  
-//   resolve(2)  
-//   console.log(3)
-// })
-// promise1.then(res => {  
-//   console.log(res)
-// }) 
-// console.log('end');
-
-// // start , 1 , 3 , end , 2
-
-
-// --------------------------------------------------------------------------------------------------
-
-
-
-// console.log('start'); 
-// const promise1 = new Promise((resolve, reject) => {
-//     resolve("hi boss")  
-//   console.log(1)
-// }) 
-// promise1.then(res => {  
-//   console.log(res)
-//   console.log("hi");
-// })
-// console.log('end');
-
-// start , 1 , end  , hi boss , hi
-
-
-
-// ----------------------------------------------------------------------------------------------------
-
-
-// console.log('start') 
-// const fn = () => (new Promise((resolve, reject) => {   
-//     console.log(1);  
-//     resolve('success')
-// })) 
-// console.log('middle') 
-// fn().then(res => {  
-//    console.log(res)
-// })
- 
-// console.log('end')
-
-
-// start , middle , 1 , end , success
-
-
-
-// -------------------------------------------------------------------------------------------------------
-
-
-// console.log('start') 
-// setTimeout(() => {  
-//   console.log('setTimeout')
-// }) 
-// Promise.resolve().then(() => {  
-//   console.log('resolve')
-// }) 
-// console.log('end')
-
-
-// start , end , resolve , setTimeout
-
-
-// ----------------------------------------------------------------------------------------------------------
-
-
-// const promise = new Promise((resolve, reject) => {  
-//   console.log(1);  
-//   setTimeout(() => {    
-//     console.log("timerStart");    
-//     resolve("success");    
-//     console.log("timerEnd");  
-//   }, 0);  
-//   console.log(2);
-// }); 
-// promise.then((res) => {  
-//    console.log(res);
-// }); 
-// console.log(4);
-
- // 1 , 2 , 4 , timeStart , timeEnd , success
-
-
-
-//  -----------------------------------------------------------------------------------------------------
-
-
-
-
-
-// console.log("starting");
-
-//  function promise(){
-//     console.log(1);
-//     return new Promise((resolve,reject)=>{
-//         setTimeout(()=>{
-//            console.log("timestart");
-//            resolve("success")
-//            console.log("timeEnd");
-//         },0)
-//         console.log(2);
-//     })
-// }
-// promise().then((run)=>{
-//     console.log(run);
-// });
-// console.log(4);
-
-
-// starting , 1 , 2 , 4, timestart ,  timeEnd , success
-
-
-// -------------------------------------------------------------------------------------------------------------------
-
-
-// const timer1 = setTimeout(() => {  
-//   console.log('timer1');    
-//   promise1 = Promise.resolve().then(() => {   
-//     console.log('promise1')  
-//   })
-// }, 0) 
-// const timer2 = setTimeout(() => {  console.log('timer2')}, 0)
-
-// //  timer1 , promise1 , timer2
-
-
-
-// console.log("start");
-
-// const promise1 = Promise.resolve().then(()=>{
-//     console.log("promise 1");
-//     const timer2 = setTimeout(()=>{
-//         console.log("timer 2");
-//     },0)
-//     });
-
-// const timer1 = setTimeout(()=>{
-//     console.log("timer 1");
-//     const promise2 = Promise.resolve().then(()=>{
-//         console.log("promise 2");
-//     })
-// },0)
-
-// console.log("end");
-
-// start , end , promise 1 , timer1 , promise 2 , timer 2
-
-
-
-
-// console.log("start");
-
-// const promise1 = Promise.resolve().then(() => {
-//     console.log("promise 1");
-//     const timer2 = setTimeout(() => {
-//         console.log("timer 2");
-//     }, 0);
-// });
-
-// const timer1 = setTimeout(() => {
-//     console.log("timer 1");
-//     const promise2 = Promise.resolve().then(() => {
-//         console.log("promise 2");
-
-//         const timer3 = setTimeout(() => {
-//             console.log("timer 3");
-//         });
-//     }, 0);
-// }, 0);
-
-// console.log("end");
-
-
-// start , end , promise 1 , timer 1 , promise 2 , timer 2 , timer 3
-
-
-
-
-
-
-
-
+       start , end , promise 1 , timer 1 , promise 2 , timer 2 , timer 3
     </script>
   </body>
 </html>
